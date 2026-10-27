@@ -1,0 +1,15 @@
+#ifndef VERSION_H
+#define VERSION_H
+
+#define STRINGIFY_VALUE(X) STRINGIFY_TOKEN(X)
+#define STRINGIFY_TOKEN(X) #X
+
+#ifdef IFX_VERSION
+    #define VERSION STRINGIFY_VALUE(IFX_VERSION)
+    #define VERSION_BUILD STRINGIFY_VALUE(IFX_BUILD)
+#else
+    #define VERSION "0.0.0"
+    #define VERSION_BUILD "0000"
+#endif
+
+#endif // VERSION_H
